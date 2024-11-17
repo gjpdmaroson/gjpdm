@@ -5,6 +5,37 @@ body {
     padding: 0;
 }
 
+/* Animasi untuk Hero Section */
+.hero h1,
+.hero p {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1s ease-out forwards;
+}
+
+.hero h1 {
+    animation-delay: 0.5s;
+    /* Menunda animasi judul */
+}
+
+.hero p {
+    animation-delay: 1s;
+    /* Menunda animasi deskripsi */
+}
+
+/* Keyframe untuk fadeInUp */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 .hero {
     background-image: url('https://lh3.googleusercontent.com/p/AF1QipOhZ93ftaVqtXCdVGhi2eCsCHRQn4TqIn5EtUuC=s680-w680-h510');
     background-size: cover;
@@ -20,6 +51,80 @@ body {
     text-align: center;
 }
 
+/* Animasi Hover pada Navbar Links */
+.navbar-nav .nav-link {
+    position: relative;
+    display: inline-block;
+    padding: 5px 10px;
+    color: #333;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #007bff;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #007bff;
+}
+
+.navbar-nav .nav-link:hover:before {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+/* Animasi Zoom In pada Gambar */
+#about img {
+    opacity: 0;
+    transform: scale(0.8);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+#about img.visible {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Animasi saat gambar muncul dalam viewport */
+@media (prefers-reduced-motion: no-preference) {
+
+    /* Gambar akan muncul dengan animasi saat div masuk viewport */
+    #about img {
+        transition: opacity 1s ease-out, transform 1s ease-out;
+    }
+}
+
+footer {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease-out forwards;
+    animation-delay: 1s;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
 footer {
     font-size: 0.9rem;
     color: #aaa;
@@ -32,6 +137,16 @@ footer {
 
 /* Responsivitas untuk layar kecil (smartphone) */
 @media screen and (max-width: 768px) {
+
+    /* Menyesuaikan animasi agar lebih cepat di perangkat mobile */
+    .hero h1,
+    .hero p {
+        animation-duration: 0.7s;
+    }
+
+    footer {
+        animation-duration: 0.5s;
+    }
 
     /* Mengurangi ukuran teks pada hero section di perangkat kecil */
     .hero {
