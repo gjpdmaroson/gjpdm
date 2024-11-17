@@ -96,6 +96,73 @@ body {
     transform: scale(1);
 }
 
+/* Styling untuk form kontak */
+#contact-form {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Form group styling */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+label {
+    font-weight: bold;
+}
+
+/* Styling input dan textarea */
+input,
+textarea {
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: 100%;
+    font-size: 1rem;
+}
+
+textarea {
+    resize: vertical;
+}
+
+/* Hover effect pada button */
+button[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Validasi error form */
+input:invalid,
+textarea:invalid {
+    border-color: rgb(161, 161, 161);
+}
+
+/* Animasi pada form */
+#contact-form {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: formFadeIn 1s ease-out forwards;
+}
+
+@keyframes formFadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 /* Animasi saat gambar muncul dalam viewport */
 @media (prefers-reduced-motion: no-preference) {
 
