@@ -1,0 +1,67 @@
+/* Default Styles (untuk desktop atau layar besar) */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.hero {
+    background-image: url('https://lh3.googleusercontent.com/p/AF1QipOhZ93ftaVqtXCdVGhi2eCsCHRQn4TqIn5EtUuC=s680-w680-h510');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    /* Pastikan hero section mengambil seluruh tinggi layar */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    /* Menambahkan efek bayangan pada teks */
+    text-align: center;
+}
+
+footer {
+    font-size: 0.9rem;
+    color: #aaa;
+    text-align: center;
+    padding: 20px;
+    background-color: #222;
+    /* Tambahkan latar belakang footer */
+    margin-top: 30px;
+}
+
+/* Responsivitas untuk layar kecil (smartphone) */
+@media screen and (max-width: 768px) {
+
+    /* Mengurangi ukuran teks pada hero section di perangkat kecil */
+    .hero {
+        background-position: top;
+        height: 60vh;
+        /* Mengurangi tinggi hero section di smartphone */
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+        /* Mengubah ukuran font judul agar lebih kecil */
+    }
+
+    footer {
+        font-size: 0.8rem;
+        /* Mengubah ukuran font footer agar lebih kecil di perangkat mobile */
+        padding: 10px;
+        /* Mengurangi padding pada footer */
+    }
+}
+
+/* Responsivitas untuk layar sangat kecil (seperti ponsel dengan layar kecil) */
+@media screen and (max-width: 480px) {
+    .hero h1 {
+        font-size: 1.5rem;
+        /* Menyesuaikan ukuran font judul lebih kecil */
+    }
+
+    footer {
+        font-size: 0.75rem;
+        /* Mengurangi ukuran font footer lebih kecil */
+    }
+}
