@@ -18,35 +18,35 @@
             height: 100%;
             margin: 0;
             padding: 0;
+            overflow: hidden; /* Menghilangkan scrollbar horizontal */
         }
 
-        /* Menetapkan video sebagai background */
-        .video-background {
-            position: fixed;  /* Video tetap di tempat meskipun di-scroll */
+        /* Background video */
+        .bg-video {
+            position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            object-fit: cover; /* Memastikan video menutupi seluruh layar */
-            z-index: -1;  /* Video berada di belakang konten */
+            object-fit: cover;
+            z-index: -1;
         }
 
-        /* Kontainer form dan konten */
+        /* Kontainer untuk video dan form */
         .content-container {
             position: relative;
             min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            color: #fff;
             padding: 20px;
         }
 
         /* Form Container */
         .form-container {
             position: relative;
-            backdrop-filter: blur(10px); /* Blur background di belakang form */
-            background-color: rgba(255, 255, 255, 0.6); /* Transparansi pada form */
+            backdrop-filter: blur(10px);
+            background-color: rgba(255, 255, 255, 0.7);
             padding: 30px;
             border-radius: 15px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
@@ -76,19 +76,20 @@
             font-size: 1rem;
         }
 
-        /* Menjaga konten agar tetap responsif */
+        /* Responsif untuk perangkat kecil */
         @media (max-width: 768px) {
             .form-container {
                 padding: 20px;
             }
         }
+
     </style>
 </head>
 
 <body>
 
-    <!-- Video Latar Belakang -->
-    <video autoplay muted loop class="video-background" aria-label="Background video for registration form" preload="auto">
+    <!-- Background Video -->
+    <video autoplay muted loop class="bg-video" aria-label="Background video for registration form" preload="auto">
         <source src="bgk.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
