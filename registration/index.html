@@ -1,157 +1,163 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register - Pendaftaran Jemaat</title>
-    <!-- Bootstrap 5.0 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="shortcut icon" href="Logo Presenter.png" type="image/x-icon">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.2/xlsx.full.min.js"></script>
+    <title>GPdI Pondok Daud Maroson</title>
+
+    <!-- Link ke file CSS eksternal -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Menambahkan Poppins Font dari Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-    <!-- Custom CSS -->
+    <link rel="shortcut icon" href="Logo Presenter.png" type="image/x-icon">
+    <!-- Internal CSS untuk mengatur font Poppins di seluruh halaman -->
     <style>
-        /* Background video */
-        .bg-video {
-    position: fixed; /* Menggunakan fixed agar tetap terpasang saat scroll */
-    top: 0;
-    left: 0;
-    width: 100vw; /* Gunakan 100vw (viewport width) untuk memastikan lebar video 100% */
-    height: 100vh; /* Gunakan 100vh (viewport height) untuk memastikan tinggi video 100% */
-    object-fit: cover; /* Memastikan video tetap terpotong jika perlu */
-    z-index: -1; /* Agar video berada di belakang konten lainnya */
-    overflow: hidden; /* Mencegah elemen lain yang melebihi area video */
-}
-
-        /* Blur effect for the form container */
-        .form-container {
-            position: relative;
-            backdrop-filter: blur(10px);
-            background-color: rgba(255, 255, 255, 0.6);
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        /* Menggunakan font Poppins untuk seluruh halaman */
+        body {
+            font-family: 'Poppins', sans-serif;
         }
 
-        /* Title */
-        h2 {
-            font-family: 'Arial', sans-serif;
-            font-weight: bold;
-            color: #fff;
+        /* Jika ingin memastikan bahwa seluruh elemen teks di halaman menggunakan Poppins */
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        p,
+        li,
+        a,
+        span {
+            font-family: 'Poppins', sans-serif;
         }
 
-        /* Form styling */
-        .form-control {
-            border-radius: 10px;
-            margin-bottom: 15px;
-        }
-
-        .btn-primary {
-            border-radius: 10px;
-            padding: 10px 20px;
-        }
-
-        .alert {
-            font-size: 1rem;
-        }
-
-        /* Align the buttons properly */
-        .btn-loading {
-            display: none;
+        /* Bisa juga menambahkan gaya khusus pada elemen tertentu jika diinginkan */
+        .navbar-brand,
+        .nav-link {
+            font-family: 'Poppins', sans-serif;
         }
     </style>
+
+    <!-- Link ke CSS Bootstrap 5.0 (CDN) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Link ke CSS Kustom (jika ada) -->
+    <link href="path/to/your/custom-style.css" rel="stylesheet">
 </head>
 
 <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand d-flex justify-content-between align-items-center" href="https://gjpdm.netlify.app/">
+                <img src="Profil.png" width="50px" style="border-radius: 10px;">
+                <h3 class="ms-3 mb-0 custom-bold">GPdI Maroson</h3>
+            </a>
 
-    <!-- Background Video -->
-    <video autoplay muted loop class="bg-video" aria-label="Background video for registration form">
-        <source src="bgk.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
+            <style>
+                .custom-bold {
+                    font-weight: bold;
+                    /* Atau bisa menggunakan font-weight: 700; untuk lebih tebal */
+                }
+            </style>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://gjpdm.netlify.app/">Beranda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://gjpdm.netlify.app/#about">Tentang</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://gjpdm.netlify.app/#services">Layanan</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://gjpdm.netlify.app/#contact">Kontak</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="https://gjpdm.netlify.app/pengumuman/">Pengumuman</a>
+                    </li>
+                    <li class="nav-item">
+                        <form action="../registration/index.html">
+                            <button type="submit" class="nav-link btn btn-primary text-white">Bergabung</button>
+                        </form>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-    <div class="container">
-        <div class="row justify-content-center align-items-center min-vh-100">
-            <div class="col-md-6">
-                <!-- Form Container -->
-                <div class="form-container">
-                    <h2 class="text-center mb-4">Formulir Pendaftaran Jemaat</h2>
-                    <div class="alert alert-success alert-dismissible fade show d-none my-alert" role="alert">
-                        <strong>Terimakasih!</strong> Pesan Anda sudah kami terima.
-                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                    </div>
-                    <form name="kirimkan">
-                        <div class="mb-3">
-                            <label for="nama" class="form-label">Nama Lengkap</label>
-                            <input type="text" class="form-control" name="nama" id="nama"
-                                placeholder="Nama Lengkap/Keluarga" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="email" class="form-label">Alamat Email</label>
-                            <input type="email" class="form-control" name="email" id="email" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="phone" class="form-label">Nomor HP</label>
-                            <input type="text" class="form-control" name="phone" id="phone" value="+62 "
-                                required>
-                           
-                        </div>
-                        <div class="mb-3">
-                            <label for="alamat" class="form-label">Alamat</label>
-                            <input type="text" class="form-control" name="alamat" id="alamat" required>
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-kirim w-100">Kirim</button>
-                        <button type="button" class="btn btn-primary btn-loading d-none" disabled>
-                            <span class="spinner-border spinner-border-sm" aria-hidden="true"></span>
-                            <span role="status">Loading...</span>
-                        </button>
-                    </form>
+    <section id="about" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Pengumuman</h2>
+            <div class="alert alert-success text-center text-uppercase fw-bold" role="alert">
+                Kegiatan dalam bulan November - Desember 2024
+            </div>
+            <div class="row">
+                <div class="col-lg">
+                    <table class="table">
+                        <thead>
+                            <tr class="text-dark">
+                                <th scope="col">Hari/Tanggal</th>
+                                <th scope="col">Kegiatan</th>
+                                <th scope="col">Pukul</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="text-danger fw-bold">
+                                <td>Minggu, 24 November 2024</td>
+                                <td>Ibadah Raya</td>
+                                <td>08.00 WITA</td>
+                            </tr>
+                            <tr class="text-danger fw-bold">
+                                <td>Minggu, 1 Desember 2024</td>
+                                <td>Ibadah Raya</td>
+                                <td>08.00 WITA</td>
+                            </tr>
+                            <tr class="text-success fw-bold">
+                                <td>Minggu, 8 Desember 2024</td>
+                                <td>Ibadah Raya | Rapat Natal Ke-2</td>
+                                <td>08.00 | - WITA</td>
+                            </tr>
+                            <tr class="text-info fw-bold">
+                                <td>Kamis, 12 Desember 2024</td>
+                                <td>Ibadah Perayaan Natal GPdI Pondok Daud Maroson</td>
+                                <td>17.00 WITA</td>
+                            </tr>
+                            <tr class="text-danger fw-bold">
+                                <td>Minggu, 25 Desember 2024</td>
+                                <td>Hari Kelahiran Tuhan Yesus</td>
+                                <td>-</td>
+                            </tr>
+                            <tr class="text-info fw-bold">
+                                <td>Selasa, 31 Desember 2024</td>
+                                <td>Kunci Tahun 2024</td>
+                                <td>-</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
+    <footer class="bg-dark text-white py-4 text-center">
+        <p>&copy; <span id="current-year"></span> GPdI Pondok Daud Maroson. All Reserved. by
+            <a href="http://gytofficial.netlify.app" target="_blank" rel="noopener noreferrer">GYTOFFICIAL</a>
+        </p>
+    </footer>
 
-    <!-- Bootstrap JS and Popper.js -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js"></script>
     <script>
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbzizG55uYtEyZOmffB85cruoc1b-tsZ5hvvpwZPXslYJjKMrD-9CyUTuxPFgbi4SOT8/exec'
-        const form = document.forms['kirimkan'];
-
-        const btnKirim = document.querySelector('.btn-kirim');
-        const btnLoading = document.querySelector('.btn-loading');
-        const myAlert = document.querySelector('.my-alert');
-
-        form.addEventListener('submit', e => {
-            e.preventDefault();
-
-            // Show loading state
-            btnKirim.classList.add('d-none');
-            btnLoading.classList.remove('d-none');
-
-            // Send form data to Google Apps Script
-            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-                .then(response => {
-                    console.log('Success!', response);
-                    // Show success alert
-                    myAlert.classList.remove('d-none');
-                    form.reset(); // Reset form after successful submission
-                })
-                .catch(error => {
-                    console.error('Error!', error.message);
-                    // Show error message
-                    myAlert.classList.remove('d-none');
-                })
-                .finally(() => {
-                    // Hide loading state and restore original button
-                    btnKirim.classList.remove('d-none');
-                    btnLoading.classList.add('d-none');
-                });
-        });
+        // Menetapkan tahun saat ini secara otomatis
+        document.getElementById('current-year').textContent = new Date().getFullYear();
     </script>
 
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
