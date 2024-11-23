@@ -21,16 +21,16 @@
 
         /* Background video */
         .bg-video {
-            position: absolute;
+            position: fixed; /* Menggunakan fixed agar video tetap di belakang */
             top: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover; /* Video mengisi layar penuh */
-            z-index: -1;
+            width: 100%; /* Menjamin lebar video mengisi layar penuh */
+            height: 100%; /* Menjamin tinggi video mengisi layar penuh */
+            object-fit: cover; /* Agar video tetap memenuhi area layar tanpa terdistorsi */
+            z-index: -1; /* Memastikan video ada di belakang konten */
         }
 
-        /* Membuat form-container memenuhi layar penuh */
+        /* Form container */
         .form-container {
             position: relative;
             backdrop-filter: blur(10px);
