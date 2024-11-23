@@ -12,12 +12,10 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <!-- Custom CSS -->
     <style>
-        /* Setel body dan html untuk tinggi penuh */
-        html,
-        body {
+        /* Setel body dan html untuk tinggi penuh dan hilangkan margin */
+        html, body {
             height: 100%;
             margin: 0;
-            /* Hapus margin default */
         }
 
         /* Background video */
@@ -27,12 +25,11 @@
             left: 0;
             width: 100%;
             height: 100%;
-            object-fit: cover;
-            /* Memastikan video mengisi seluruh layar */
+            object-fit: cover; /* Video mengisi layar penuh */
             z-index: -1;
         }
 
-        /* Blur effect untuk form container */
+        /* Form container */
         .form-container {
             position: relative;
             backdrop-filter: blur(10px);
