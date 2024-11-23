@@ -16,6 +16,7 @@
         html, body {
             height: 100%;
             margin: 0;
+            overflow: hidden; /* Menghindari scroll jika tidak diperlukan */
         }
 
         /* Background video */
@@ -29,7 +30,7 @@
             z-index: -1;
         }
 
-        /* Form container */
+        /* Membuat form-container memenuhi layar penuh */
         .form-container {
             position: relative;
             backdrop-filter: blur(10px);
@@ -37,6 +38,10 @@
             padding: 30px;
             border-radius: 15px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            min-height: 100vh; /* Pastikan form memenuhi layar penuh */
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         /* Title */
@@ -67,6 +72,11 @@
                 object-position: center;
                 object-fit: cover;
             }
+
+            /* Memberikan ruang lebih untuk form di perangkat kecil */
+            .form-container {
+                padding: 20px;
+            }
         }
     </style>
 </head>
@@ -79,7 +89,7 @@
         Your browser does not support the video tag.
     </video>
 
-    <div class="container">
+    <div class="container-fluid p-0">
         <div class="row justify-content-center align-items-center min-vh-100">
             <div class="col-md-6">
                 <!-- Form Container -->
