@@ -12,6 +12,12 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <!-- Custom CSS -->
     <style>
+        /* Setel body dan html untuk tinggi penuh */
+        html, body {
+            height: 100%;
+            margin: 0; /* Hapus margin default */
+        }
+
         /* Background video */
         .bg-video {
             position: absolute;
@@ -19,11 +25,11 @@
             left: 0;
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: cover; /* Memastikan video mengisi seluruh layar */
             z-index: -1;
         }
 
-        /* Blur effect for the form container */
+        /* Blur effect untuk form container */
         .form-container {
             position: relative;
             backdrop-filter: blur(10px);
@@ -55,12 +61,7 @@
             font-size: 1rem;
         }
 
-        /* Align the buttons properly */
-        .btn-loading {
-            display: none;
-        }
-
-        /* Ensure background video fits on all screen sizes */
+        /* Menghindari ruang kosong di bawah video pada perangkat kecil */
         @media (max-width: 768px) {
             .bg-video {
                 object-position: center;
