@@ -37,7 +37,7 @@ body {
 }
 
 .hero {
-    background-image: url('https://lh3.googleusercontent.com/p/AF1QipOhZ93ftaVqtXCdVGhi2eCsCHRQn4TqIn5EtUuC=s680-w680-h510');
+    background-image: url('img/Banner Geraja Website.png');
     background-size: cover;
     background-position: center;
     height: 100vh;
@@ -56,10 +56,14 @@ body {
     position: relative;
     display: inline-block;
     padding: 5px 10px;
-    color: #333;
+    color: #a7a7a7;
     font-weight: bold;
     text-transform: uppercase;
     transition: color 0.3s ease;
+}
+
+.nav-link.text-white {
+    color: white !important;
 }
 
 .navbar-nav .nav-link:before {
